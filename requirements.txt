@@ -1,0 +1,10 @@
+# Versions are those the notebooks were actually executed with.
+pandas==3.0.5
+numpy==2.5.2
+scikit-learn==1.9.0
+matplotlib==3.11.1
+joblib==1.5.3
+ipykernel==7.3.0
+
+# Only needed to run 01-timeseries-basics/src/serial_logger.py against the ESP32.
+pyserial==3.5

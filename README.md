@@ -21,6 +21,15 @@ reading its average.
 | 03 | [AI4I 2020 maintenance](03-ai4i-maintenance/) | Classification — machine failure at 3.4% positives | AI4I 2020, 10000 rows | Physics-derived features · threshold tuning · `HistGradientBoosting` | **recall 0.838 · precision 0.934 · F1 0.884**; **58/58** caught on sensor-visible failure modes |
 | 04 | [Retail customer value](04-retail-clv/) | Clustering + two-stage prediction | Online Retail II, ~1M invoice lines | Time-based split · RFM · K-Means · classifier × regressor | **AUC 0.809**; top 10% of customers captures **48.2%** of next-period revenue |
 
+## In progress — not yet published
+
+| # | Project | Topic | Status |
+|---|---|---|---|
+| 05 | [NSL-KDD intrusion detection](05-nslkdd-intrusion/) | Supervised + unsupervised · PCA · anomaly detection without labels | Full report written (Arabic), notebook done — pending translation/polish |
+| 06 | [Retailrocket](06-retailrocket/) | Implicit-feedback e-commerce events | Exploration underway |
+| 07 | [Neural networks](07-neural-networks/) | First PyTorch — CNN on CIFAR-10, grid search | Working notebooks; Jena Climate queued |
+| 08 | [ESP32 thermal log](08-esp32-thermal/) | Own two-sensor hardware data, round two | Log recorded, analysis started |
+
 ## Running it
 
 ```bash

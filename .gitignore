@@ -6,3 +6,19 @@ data/raw/
 *.csv
 !01-timeseries-basics/data/heat_log.csv
 *.xlsx
+
+# dataset archives now live inside each project's data/ folder — never commit them
+*.zip
+*.rar
+*.tar.gz
+*.arff
+
+# in-progress projects: keep data out, keep the data READMEs and own-sensor logs in
+05-nslkdd-intrusion/data/*
+!05-nslkdd-intrusion/data/README.md
+06-retailrocket/data/*
+!06-retailrocket/data/README.md
+07-neural-networks/data/
+08-esp32-thermal/data/*
+!08-esp32-thermal/data/README.md
+!08-esp32-thermal/data/thermal_log.csv

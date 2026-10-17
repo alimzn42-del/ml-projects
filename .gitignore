@@ -22,3 +22,9 @@ data/raw/
 08-esp32-thermal/data/*
 !08-esp32-thermal/data/README.md
 !08-esp32-thermal/data/thermal_log.csv
+09-jena-climate/data/*
+!09-jena-climate/data/README.md
+10-arabic-reviews/data/*
+!10-arabic-reviews/data/README.md
+# review checkpoints are 6.5–540 MB each — regenerable from the notebook
+10-arabic-reviews/models/

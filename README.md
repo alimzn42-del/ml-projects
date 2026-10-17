@@ -20,14 +20,16 @@ reading its average.
 | 02 | [NASA Turbofan RUL](02-nasa-turbofan/) | Regression — remaining useful life | C-MAPSS FD001, 100 engines, ~20600 rows · California Housing (20640 rows) | Target construction · group split · `LinearRegression` vs `RandomForest` | **R² 0.806 · MAE 14.10 · RMSE 17.65** on unseen engines — linear, near published deep models |
 | 03 | [AI4I 2020 maintenance](03-ai4i-maintenance/) | Classification — machine failure at 3.4% positives | AI4I 2020, 10000 rows | Physics-derived features · threshold tuning · `HistGradientBoosting` | **recall 0.838 · precision 0.934 · F1 0.884**; **58/58** caught on sensor-visible failure modes |
 | 04 | [Retail customer value](04-retail-clv/) | Clustering + two-stage prediction | Online Retail II, ~1M invoice lines | Time-based split · RFM · K-Means · classifier × regressor | **AUC 0.809**; top 10% of customers captures **48.2%** of next-period revenue |
+| 05 | [NSL-KDD intrusion detection](05-nslkdd-intrusion/) | Supervised + unsupervised together | NSL-KDD, 126k train / 22.5k test with 17 unseen attack types | Classifier ∪ `IsolationForest` · confidence abstention · autoencoder | Union **recall 0.812 · acc 0.852** on `KDDTest+`; detector catches **78%** of never-seen attack types |
+| 09 | [Jena climate forecasting](09-jena-climate/) | Recurrent networks — T at +24 h | Jena weather station, 2009–2016 hourly | Gap-safe segments · dense→RNN→LSTM→GRU diagnostic ladder · gradient-flow measurement | GRU-32 (4,353 weights): test MAE **2.238 °C vs 2.473 baseline (−9.5%)** on an unseen year |
+| 10 | [Arabic hotel reviews](10-arabic-reviews/) | NLP — unhappy-guest detection | HARD, 409k Arabic reviews | Label-leak removal · hotel-based split · SentencePiece + GRU-attention vs AraBERT · blind error audit | AraBERT: **recall 0.917 · precision 0.671 · F1 0.775** on unseen hotels |
 
 ## In progress — not yet published
 
 | # | Project | Topic | Status |
 |---|---|---|---|
-| 05 | [NSL-KDD intrusion detection](05-nslkdd-intrusion/) | Supervised + unsupervised · PCA · anomaly detection without labels | Full report written (Arabic), notebook done — pending translation/polish |
 | 06 | [Retailrocket](06-retailrocket/) | Implicit-feedback e-commerce events | Exploration underway |
-| 07 | [Neural networks](07-neural-networks/) | First PyTorch — CNN on CIFAR-10, grid search | Working notebooks; Jena Climate queued |
+| 07 | [Neural networks](07-neural-networks/) | First PyTorch — CNN on CIFAR-10, grid search | Working notebooks — the foundations projects 09 and 10 grew from |
 | 08 | [ESP32 thermal log](08-esp32-thermal/) | Own two-sensor hardware data, round two | Log recorded, analysis started |
 
 ## Running it
@@ -57,6 +59,9 @@ direct link, and the commands to fetch and place the files:
 - [`02-nasa-turbofan/data/README.md`](02-nasa-turbofan/data/README.md)
 - [`03-ai4i-maintenance/data/README.md`](03-ai4i-maintenance/data/README.md)
 - [`04-retail-clv/data/README.md`](04-retail-clv/data/README.md)
+- [`05-nslkdd-intrusion/data/README.md`](05-nslkdd-intrusion/data/README.md)
+- [`09-jena-climate/data/README.md`](09-jena-climate/data/README.md)
+- [`10-arabic-reviews/data/README.md`](10-arabic-reviews/data/README.md)
 
 Project 01 needs no download to run — one notebook reads its data straight from a URL and
 the other reads the committed sensor log. Projects 02–04 need their files fetched first.
@@ -71,5 +76,11 @@ GitHub without running anything.
 02-nasa-turbofan/         two notebooks — regression metrics warm-up, then the RUL project
 03-ai4i-maintenance/      one notebook
 04-retail-clv/            one notebook · the saved model
+05-nslkdd-intrusion/      one notebook · full report as README (Arabic original kept alongside)
+06-retailrocket/          in progress
+07-neural-networks/       PyTorch foundations — CNN on CIFAR
+08-esp32-thermal/         in progress · committed sensor data
+09-jena-climate/          one notebook · pipeline · committed final model · delivery doc (en + ar)
+10-arabic-reviews/        one notebook · pipeline · DELIVERY + EVALUATION + client README
 progress.md               the daily journal
 ```

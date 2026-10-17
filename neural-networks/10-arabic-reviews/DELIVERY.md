@@ -38,10 +38,10 @@ models/                   all checkpoints incl. the shipped arabert_seed0.pt (no
 | 3 | Duplicates and empty reviews | Data audit | `clean`: drop duplicates on all meta columns, drop reviews with no real text |
 | 4 | Cells failed after kernel restarts (`NameError`) | Repeated errors | Cleaned data cached to parquet; cells made self-contained |
 | 5 | After installing pyarrow, regex with `\u` escapes failed (`ArrowInvalid`) | Error on load | `EMPTY_CHARS` rewritten without raw-string escapes; counts checked identical |
-| 6 | AraBERT 3.5× slower than expected (~13 h estimated) | Batch time and GPU power far below normal | Windows was spilling GPU memory to RAM: turned off "CUDA Sysmem Fallback", max length 128 → ~23 min/epoch |
+| 6 | AraBERT 3.5× slower than expected (~13 h estimated) | Batch time and GPU power far below normal | Windows was spilling GPU memory to RAM: turned off "CUDA Sysmem Fallback", max length 128 → ~24 min/epoch |
 | 7 | "Run All" re-ran every experiment | Long unexpected run | Interrupted, restarted, ran only needed cells; training cells made resumable (skip if saved) |
 | 8 | Comparing models on different metrics (macro F1 vs unhappy F1) | Supervisor review | All candidates re-scored on the client metric before choosing |
-| 9 | Scores stopped improving | Plateau across models | Blind audit of 120 errors: 58 were label noise vs 21 model mistakes — further tuning stopped |
+| 9 | Scores stopped improving | Plateau across models | Blind audit of 120 reviews (90 of them errors): 58 were label noise vs 21 model mistakes — further tuning stopped |
 
 ## Decisions and why
 

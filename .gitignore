@@ -18,13 +18,13 @@ data/raw/
 !05-nslkdd-intrusion/data/README.md
 06-retailrocket/data/*
 !06-retailrocket/data/README.md
-07-neural-networks/data/
 08-esp32-thermal/data/*
 !08-esp32-thermal/data/README.md
 !08-esp32-thermal/data/thermal_log.csv
-09-jena-climate/data/*
-!09-jena-climate/data/README.md
-10-arabic-reviews/data/*
-!10-arabic-reviews/data/README.md
+neural-networks/07-foundations/data/
+neural-networks/09-jena-climate/data/*
+!neural-networks/09-jena-climate/data/README.md
+neural-networks/10-arabic-reviews/data/*
+!neural-networks/10-arabic-reviews/data/README.md
 # review checkpoints are 6.5–540 MB each — regenerable from the notebook
-10-arabic-reviews/models/
+neural-networks/10-arabic-reviews/models/
